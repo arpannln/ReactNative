@@ -2,7 +2,6 @@ import React from 'react';
 import {
   ImageBackground,
   Image,
-  Button, 
   Platform,
   ScrollView,
   StyleSheet,
@@ -10,6 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { Button } from 'react-native-elements';
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
@@ -28,9 +28,12 @@ export default class HomeScreen extends React.Component {
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
           </View>
+          <Text>
+          </Text>
           <Button
             onPress={this._handleHelpPress}
-            title="Learn More"s
+            buttonStyle={styles.buttonStyle}
+            title="Recent Goals"
             color="#841584"
             accessibilityLabel="Learn more about this purple button"
           />
@@ -81,6 +84,15 @@ export default class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  buttonStyle: {
+    backgroundColor: "rgba(256, 256, 256, 1)",
+    width: 300,
+    height: 45,
+    borderRadius: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
   },
   developmentModeText: {
     marginBottom: 20,
