@@ -1,6 +1,7 @@
 import React from 'react';
 import { ExpoConfigView } from '@expo/samples';
 
+//need back to topics also search input as well as GIF display
 export default class SettingsScreen extends React.Component {
   static navigationOptions = {
     title: 'app.json',

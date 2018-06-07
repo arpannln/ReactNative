@@ -10,6 +10,7 @@ import {
   View,
 } from 'react-native';
 import { Button } from 'react-native-elements';
+import { StackNavigator } from 'react-navigation';
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
@@ -23,6 +24,8 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
+    console.log(navigate);
     return (
       <ImageBackground style={styles.container}
         source={require('../assets/images/Landing.jpg')}>
@@ -42,14 +45,14 @@ export default class HomeScreen extends React.Component {
             GIFs, Go Nuts
           </Text>
           <Button
-            onPress={this._handleHelpPress}
+            onPress={() => navigate('Topics')}
             buttonStyle={[ styles.buttonStyle, { backgroundColor: "#0099cc" } ]}
             title="TOPICS"
             color="white"
             accessibilityLabel="Learn more about this purple button"
           />
           <Button
-            onPress={this._handleHelpPress}
+            onPress={() => navigate('Settings')}
             buttonStyle={[ styles.buttonStyle, { backgroundColor: "#FF1493" } ]}
             title="RANDOM"
             color="white"
