@@ -12,6 +12,7 @@ My journey diving into React Native
   * App that will show the most recent goals + the best goals that I've ever seen IMO 
   * After designing the home page I realized the making and sustaining the scraper for that kind of data might be unrealistic
   * However as it was the first item I've ever built with React Native I wanted to document it: 
+  
   ![LandingPage](https://res.cloudinary.com/arpannln/image/upload/v1528346284/Screen_Shot_2018-06-06_at_9.30.10_PM.png)
   
  
