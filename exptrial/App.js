@@ -41,7 +41,8 @@ export default class App extends React.Component {
         // to remove this if you are not using it in your app
         'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
         'blackjack': require('./assets/fonts/blackjack.otf'),
-        'roboto': require('./assets/fonts/Roboto-Regular.ttf')
+        'roboto': require('./assets/fonts/Roboto-Regular.ttf'),
+        'roboto-medium': require('./assets/fonts/Roboto-Medium.ttf'),
       }),
     ]);
   };

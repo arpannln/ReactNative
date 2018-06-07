@@ -16,6 +16,7 @@ import { MonoText } from '../components/StyledText';
 //let's switch to a random funny meme/gif generator
 //figure out how to have these buttons link to differen components
 //pretty much all inline styling 
+//GIF Key: y5Rxknv2Yloe0AFYK7lnrPfwNKbxc2Nz 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
@@ -24,25 +25,28 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <ImageBackground style={styles.container}
-        source={require('../assets/images/soccer.jpg')}>
+        source={require('../assets/images/Landing.jpg')}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
           </View>
           <Text style={styles.titleStyle}>
-            #GOALS
+            #GIFster
+          </Text>
+          <Text style={styles.captionStyle}>
+            GIFs, Go Nuts
           </Text>
           <Button
             onPress={this._handleHelpPress}
-            buttonStyle={styles.buttonStyle}
-            title="RECENT GOALS"
+            buttonStyle={[ styles.buttonStyle, { backgroundColor: "#0099cc" } ]}
+            title="TOPICS"
             color="white"
             accessibilityLabel="Learn more about this purple button"
           />
           <Button
             onPress={this._handleHelpPress}
-            buttonStyle={styles.buttonStyle}
-            title="G.O.A.T GOALS"
+            buttonStyle={[ styles.buttonStyle, { backgroundColor: "#FF1493" } ]}
+            title="RANDOM"
             color="white"
             accessibilityLabel="Learn more about this purple button"
           />
@@ -95,7 +99,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   buttonStyle: {
-    backgroundColor: "#037f51",
     width: '50%',
     height: 45,
     marginLeft: '25%',
@@ -114,7 +117,16 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     textAlign: 'center',
     marginTop: 50,
-    marginBottom: 100,
+    marginBottom: 5,
+  },
+  captionStyle: {
+    fontFamily: "roboto",
+    fontSize: 20,
+    color: 'rgba(256, 256, 256, 1)',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    textAlign: 'center',
+    marginBottom: 250,
   },
   developmentModeText: {
     marginBottom: 20,
