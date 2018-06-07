@@ -98,9 +98,9 @@ const styles = StyleSheet.create({
     width: '50%',
     height: 45,
     marginLeft: '25%',
-    marginTop: '10%',
-    textAlign: 'center',
+    elevation: 1,
     borderRadius: 5,
+    marginTop: 30,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
@@ -112,7 +112,8 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     textAlign: 'center',
-    marginBottom: '45%'
+    marginTop: 50,
+    marginBottom: 100,
   },
   developmentModeText: {
     marginBottom: 20,
