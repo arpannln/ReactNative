@@ -28,13 +28,21 @@ export default class HomeScreen extends React.Component {
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
           </View>
-          <Text>
+          <Text style={styles.titleStyle}>
+            #GOALS
           </Text>
           <Button
             onPress={this._handleHelpPress}
             buttonStyle={styles.buttonStyle}
-            title="Recent Goals"
-            color="#841584"
+            title="RECENT GOALS"
+            color="white"
+            accessibilityLabel="Learn more about this purple button"
+          />
+          <Button
+            onPress={this._handleHelpPress}
+            buttonStyle={styles.buttonStyle}
+            title="G.O.A.T GOALS"
+            color="white"
             accessibilityLabel="Learn more about this purple button"
           />
         </ScrollView>
@@ -86,13 +94,25 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   buttonStyle: {
-    backgroundColor: "rgba(256, 256, 256, 1)",
-    width: 300,
+    backgroundColor: "#037f51",
+    width: '50%',
     height: 45,
+    marginLeft: '25%',
+    marginTop: '10%',
+    textAlign: 'center',
     borderRadius: 5,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
+  },
+  titleStyle: {
+    fontFamily: "blackjack",
+    fontSize: 50,
+    color: 'rgba(256, 256, 256, 1)',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    textAlign: 'center',
+    marginBottom: '45%'
   },
   developmentModeText: {
     marginBottom: 20,
@@ -130,12 +150,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.05)',
     borderRadius: 3,
     paddingHorizontal: 4,
-  },
-  getStartedText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
-    textAlign: 'center',
   },
   tabBarInfoContainer: {
     position: 'absolute',
