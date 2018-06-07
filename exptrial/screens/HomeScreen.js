@@ -13,7 +13,8 @@ import { Button } from 'react-native-elements';
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
-
+//let's switch to a random funny meme/gif generator
+//figure out how to have these buttons link to differen components
 //pretty much all inline styling 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
