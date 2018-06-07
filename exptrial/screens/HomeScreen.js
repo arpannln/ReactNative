@@ -30,10 +30,15 @@ export default class HomeScreen extends React.Component {
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
           </View>
-          <Text style={styles.titleStyle}>
-            #GIFster
+          <Text style={[ styles.titleStyle, styles.neonBlue ]}>
+              #
+            <Text style={[ styles.titleStyle, styles.neonPink ]}>
+                GIF
+            </Text>
+          
+              ster
           </Text>
-          <Text style={styles.captionStyle}>
+          <Text style={[ styles.captionStyle ] }>
             GIFs, Go Nuts
           </Text>
           <Button
@@ -98,6 +103,28 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  neonPink: {
+    color: '#FF1493',
+  },
+  neonBlue: {
+    color: '#0099cc',
+  },
+  neonGreen: {
+    color: '#93ff68',
+  },
+  neonYellow: {
+    color: '#e4ff55',
+  },
+  neonOrange: {
+    color: '#ffb543',
+  },
+  neonRed: {
+    color: '#ff5a5a'
+  },
+  neonPurple: {
+    color: '#c660ff'
+  },
+  
   buttonStyle: {
     width: '50%',
     height: 45,
@@ -105,14 +132,13 @@ const styles = StyleSheet.create({
     elevation: 1,
     borderRadius: 5,
     marginTop: 30,
-    shadowColor: '#000',
+    shadowColor: '#FFF',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
   },
   titleStyle: {
     fontFamily: "blackjack",
     fontSize: 50,
-    color: 'rgba(256, 256, 256, 1)',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     textAlign: 'center',
