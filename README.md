@@ -16,3 +16,5 @@ My journey diving into React Native
   ![LandingPage](https://res.cloudinary.com/arpannln/image/upload/v1528346284/Screen_Shot_2018-06-06_at_9.30.10_PM.png)
   
  
+# New Plan 
+  * Found some cool GIF Api's. 3 pages, Landing, Topics, Display with Search Feature
