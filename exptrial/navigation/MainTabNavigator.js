@@ -6,7 +6,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import TopicsScreen from '../screens/TopicsScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import GIFScreen from '../screens/GIFScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -41,11 +41,11 @@ LinksStack.navigationOptions = {
 };
 
 const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+  GIF: GIFScreen,
 });
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+  tabBarLabel: 'GIF',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}

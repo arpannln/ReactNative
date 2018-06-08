@@ -52,7 +52,7 @@ export default class HomeScreen extends React.Component {
             accessibilityLabel="Learn more about this purple button"
           />
           <Button
-            onPress={() => navigate('Settings')}
+            onPress={() => navigate('GIF')}
             buttonStyle={[ styles.buttonStyle, { backgroundColor: "#FF1493" } ]}
             title="RANDOM"
             color="white"
