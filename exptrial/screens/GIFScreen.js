@@ -6,11 +6,23 @@ export default class GIFScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { text: '' };
+    this.state = { text: '', gifURL: 'https://media1.giphy.com/media/xT4uQ6HaStH5UX7EBO/giphy.gif' };
   }
 
   componentDidMount() {
+    console.log("hi");
     console.log(this.props);
+
+    let that = this;
+
+    async function fetchGIF () {
+       let response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=y5Rxknv2Yloe0AFYK7lnrPfwNKbxc2Nz&tag=&rating=R`);
+       let gifData = await response.json();
+       that.setState({ gifURL: gifData.data.url });
+       console.log(that.state);
+    }
+
+    fetchGIF();
   }
 
   static navigationOptions = {
@@ -23,7 +35,7 @@ export default class GIFScreen extends React.Component {
       <ImageBackground style={styles.container}>
         <Image
             style={styles.imageStyles}
-            source={{uri: 'https://media1.giphy.com/media/xT4uQ6HaStH5UX7EBO/giphy.gif'}}
+            source={{uri: `${this.state.gifURL}`}}
           />
         <TextInput
           style={styles.inputStyles}
