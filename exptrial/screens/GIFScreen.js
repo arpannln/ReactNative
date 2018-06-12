@@ -18,7 +18,7 @@ export default class GIFScreen extends React.Component {
     async function fetchGIF () {
        let response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=y5Rxknv2Yloe0AFYK7lnrPfwNKbxc2Nz&tag=&rating=R`);
        let gifData = await response.json();
-       that.setState({ gifURL: gifData.data.url });
+       that.setState({ gifURL: gifData.data.images.original.url });
        console.log(that.state);
     }
 
@@ -31,11 +31,12 @@ export default class GIFScreen extends React.Component {
 
   render() {
     const { navigate } = this.props.navigation;
+    const gifURL = this.state.gifURL
     return (
       <ImageBackground style={styles.container}>
         <Image
             style={styles.imageStyles}
-            source={{uri: `${this.state.gifURL}`}}
+            source={{uri: gifURL}}
           />
         <TextInput
           style={styles.inputStyles}
