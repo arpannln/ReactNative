@@ -3,12 +3,16 @@ import { Button } from 'react-native-elements';
 import { ScrollView, StyleSheet, ImageBackground, Image, TextInput } from 'react-native';
 
 export default class GIFScreen extends React.Component {
-  
+
   constructor(props) {
     super(props);
     this.state = { text: '' };
   }
-  
+
+  componentDidMount() {
+    console.log(this.props);
+  }
+
   static navigationOptions = {
     title: 'GIF',
   };
@@ -69,10 +73,9 @@ const styles = StyleSheet.create({
   },
   inputStyles: {
     backgroundColor: 'white',
-    height: 40, 
+    height: 40,
     width: 200,
     marginLeft: 90,
     marginTop: 15,
   }
 });
-
