@@ -6,7 +6,7 @@ export default class GIFScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { text: '', gifURL: 'https://media1.giphy.com/media/xT4uQ6HaStH5UX7EBO/giphy.gif' };
+    this.state = { text: '', gifURL: 'https://cdn.tutsplus.com/webdesign/uploads/legacy/tuts/377_loading_gif/final.gif' };
     this.getRandom();
   }
 
@@ -20,8 +20,6 @@ export default class GIFScreen extends React.Component {
     async function fetchGIF () {
        let response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=y5Rxknv2Yloe0AFYK7lnrPfwNKbxc2Nz&tag=&rating=R`);
        let gifData = await response.json();
-       console.log(gifData);
-       console.log(that.state);
        that.setState({ gifURL: gifData.data.image_original_url });
     }
 
@@ -30,11 +28,11 @@ export default class GIFScreen extends React.Component {
 
   getSearch(searchParams) {
     let that = this;
-
     async function fetchGIF () {
-       let response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=y5Rxknv2Yloe0AFYK7lnrPfwNKbxc2Nz&q=${searchParams}&limit=1&offset=0&rating=R&lang=en`);
+       let response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=y5Rxknv2Yloe0AFYK7lnrPfwNKbxc2Nz&q=${searchParams}&limit=50&offset=0&rating=R&lang=en`);
        let gifData = await response.json();
-       that.setState({ gifURL: gifData.data.images.original.url });
+       console.log(gifData);
+       that.setState({ gifURL: gifData.data[0].images.original.url });
     }
 
     fetchGIF();
