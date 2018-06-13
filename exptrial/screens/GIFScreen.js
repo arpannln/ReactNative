@@ -7,32 +7,34 @@ export default class GIFScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = { text: '', gifURL: 'https://media1.giphy.com/media/xT4uQ6HaStH5UX7EBO/giphy.gif' };
+    this.getRandom();
   }
 
-  componentDidMount() {
-    console.log("hi");
-    console.log(this.props);
+  handlePress (searchParams) {
+    searchParams ? this.getSearch(searchParams) : this.getRandom();
+  }
 
+  getRandom() {
     let that = this;
 
     async function fetchGIF () {
        let response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=y5Rxknv2Yloe0AFYK7lnrPfwNKbxc2Nz&tag=&rating=R`);
        let gifData = await response.json();
-       that.setState({ gifURL: gifData.data.images.original.url });
+       console.log(gifData);
        console.log(that.state);
+       that.setState({ gifURL: gifData.data.image_original_url });
     }
 
     fetchGIF();
   }
 
-  handlePress () {
+  getSearch(searchParams) {
     let that = this;
 
     async function fetchGIF () {
-       let response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=y5Rxknv2Yloe0AFYK7lnrPfwNKbxc2Nz&tag=&rating=R`);
+       let response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=y5Rxknv2Yloe0AFYK7lnrPfwNKbxc2Nz&q=${searchParams}&limit=1&offset=0&rating=R&lang=en`);
        let gifData = await response.json();
        that.setState({ gifURL: gifData.data.images.original.url });
-       console.log(that.state);
     }
 
     fetchGIF();
@@ -58,7 +60,7 @@ export default class GIFScreen extends React.Component {
           defaultValue='Search'
         />
         <Button
-          onPress={() => this.handlePress()}
+          onPress={() => this.handlePress(this.state.text)}
           buttonStyle={[ styles.buttonStyle, { backgroundColor: "#0099cc" } ]}
           title="SEARCH"
           color="white"
