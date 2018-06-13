@@ -25,6 +25,19 @@ export default class GIFScreen extends React.Component {
     fetchGIF();
   }
 
+  handlePress () {
+    let that = this;
+
+    async function fetchGIF () {
+       let response = await fetch(`https://api.giphy.com/v1/gifs/random?api_key=y5Rxknv2Yloe0AFYK7lnrPfwNKbxc2Nz&tag=&rating=R`);
+       let gifData = await response.json();
+       that.setState({ gifURL: gifData.data.images.original.url });
+       console.log(that.state);
+    }
+
+    fetchGIF();
+  }
+
   static navigationOptions = {
     title: 'GIF',
   };
@@ -45,14 +58,14 @@ export default class GIFScreen extends React.Component {
           defaultValue='Search'
         />
         <Button
-          onPress={() => navigate('GIF')}
+          onPress={() => this.handlePress()}
           buttonStyle={[ styles.buttonStyle, { backgroundColor: "#0099cc" } ]}
           title="SEARCH"
           color="white"
           accessibilityLabel="Learn more about this purple button"
         />
         <Button
-          onPress={() => navigate('GIF')}
+          onPress={() => this.handlePress()}
           buttonStyle={[ styles.buttonStyle, { backgroundColor: "#FF1493" } ]}
           title="RANDOM"
           color="white"
