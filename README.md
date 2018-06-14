@@ -9,7 +9,7 @@ My journey diving into React Native
 
 # Functionality 
   * Users can choose if they want a random GIF or one filtered by topic 
-  * Users can then search for particular topiced GIFs
+  * Users can then search for particular themed GIFs
 
 # PreDiving Readings I found useful 
 (Note that I was quite comfortable with React.js)
