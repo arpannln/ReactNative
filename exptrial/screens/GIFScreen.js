@@ -28,11 +28,12 @@ export default class GIFScreen extends React.Component {
 
   getSearch(searchParams) {
     let that = this;
+    let max = 50;
+    let random = Math.floor(Math.random() * max);
     async function fetchGIF () {
-       let response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=y5Rxknv2Yloe0AFYK7lnrPfwNKbxc2Nz&q=${searchParams}&limit=50&offset=0&rating=R&lang=en`);
+       let response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=y5Rxknv2Yloe0AFYK7lnrPfwNKbxc2Nz&q=${searchParams}&limit=${max}&offset=0&rating=R&lang=en`);
        let gifData = await response.json();
-       console.log(gifData);
-       that.setState({ gifURL: gifData.data[0].images.original.url });
+       that.setState({ gifURL: gifData.data[random].images.original.url });
     }
 
     fetchGIF();
